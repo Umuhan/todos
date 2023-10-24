@@ -1,40 +1,18 @@
-import { useState } from "react";
-import PropTypes from "prop-types";
-const InputTodo = ({ addTodoItem }) => {
-  const [title, setTitle] = useState("");
-  const [message, setMessage] = useState("");
-  const handleChange = (e) => {
-    setTitle(e.target.value);
+import styles from "../styles/Header.module.css";
+
+const Header = () => {
+  const headerStyle = {
+    padding: "20px 0",
+    lineHeight: "1.5em",
+    color: "#aeadad",
+    textAlign: "center",
   };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (title.trim()) {
-      addTodoItem(title);
-      setTitle("");
-      setMessage("");
-    } else {
-      setMessage("Please add item");
-    }
-    setTitle("");
-  };
+
   return (
-    <>
-      {" "}
-      <form onSubmit={handleSubmit} className="form-container">
-        <input
-          type="text"
-          placeholder="Add Todo..."
-          value={title}
-          onChange={handleChange}
-          className="input-text"
-        />
-        <button className="input-submit">Submit</button>
-      </form>
-      <span className="submit-warning">{message}</span>
-    </>
+    <header style={headerStyle} className={styles.header}>
+      <h1>todos</h1>
+      <p>Items will persist in the browser local storage</p>
+    </header>
   );
 };
-InputTodo.propTypes = {
-  addTodoItem: PropTypes.string.isRequired,
-};
-export default InputTodo;
+export default Header;
