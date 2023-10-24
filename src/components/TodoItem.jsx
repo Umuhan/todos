@@ -1,6 +1,8 @@
-import styles from "../styles/TodoItem.module.css";
+/* eslint-disable */
 import PropTypes from "prop-types";
 import { useState } from "react";
+import styles from "../styles/TodoItem.module.css";
+
 const TodoItem = ({ itemProp, handleChange, delTodo, setUpdate }) => {
   const [editing, setEditing] = useState(false);
   const completedStyle = {

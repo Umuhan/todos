@@ -1,6 +1,7 @@
-import "./App.css";
-import TodosLogic from "./components/TodosLogic";
-import Header from "./components/Header";
+import './App.css';
+import TodosLogic from './components/TodosLogic';
+import Header from './components/Header';
+
 function App() {
   return (
     <div className="App">
